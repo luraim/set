@@ -76,7 +76,7 @@ func (s *Set[T]) Intersection(other *Set[T]) *Set[T] {
 
 // Equals returns true if every element is same between this and the
 // other set
-func (s *Set[T]) Equal(other *Set[T]) bool {
+func (s *Set[T]) IsEqual(other *Set[T]) bool {
 	if s.Count() != other.Count() {
 		return false
 	}

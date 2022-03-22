@@ -16,7 +16,7 @@ func (s OrderedSet[T]) String() string {
 	elemStrs := fun.Map(s.Elems, func(e T) string {
 		return fmt.Sprintf("%v", e)
 	})
-	return fmt.Sprintf("(%s)", strings.Join(elemStrs, ","))
+	return fmt.Sprintf("(%s)", strings.Join(elemStrs, ", "))
 }
 
 func NewOrdered[T comparable](elems ...T) *OrderedSet[T] {
@@ -78,7 +78,7 @@ func (s *OrderedSet[T]) Intersection(other *OrderedSet[T]) *OrderedSet[T] {
 
 // Equals returns true if every element is same between this and the
 // other set, and in the same order
-func (s *OrderedSet[T]) Equal(other *OrderedSet[T]) bool {
+func (s *OrderedSet[T]) IsEqual(other *OrderedSet[T]) bool {
 	if len(s.Elems) != len(other.Elems) {
 		return false
 	}
